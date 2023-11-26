@@ -18,7 +18,7 @@ const Navbar = () => {
                          <Icons.logo className="h-20 w-20"/>
                     </Link>
                 </div>
-                <div className="hidden z-50 lg:ml-8 lg:block lg:self-stretch">
+                <div className="hidden z-50 md:ml-8 md:block md:self-stretch">
                     <NavItems/>
                 </div>
             </div>
