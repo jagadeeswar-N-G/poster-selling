@@ -4,6 +4,7 @@ import "./globals.css";
 import { cn } from "@/lib/utils";
 import Navbar from "@/components/Navbar";
 import Providers from "@/components/Providers";
+import GlobalState from "@/context";
 const inter = Inter({ subsets: ["latin"] });
 
 export const metadata: Metadata = {
@@ -26,10 +27,12 @@ export default function RootLayout({
         )}
       >
         <main className="relative flex flex-col min-h-screen">
+        <GlobalState>
           <Providers>
             <Navbar />
             <div className="flex-grow flex-1">{children}</div>
           </Providers>
+        </GlobalState>
         </main>
       </body>
     </html>
