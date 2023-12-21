@@ -41,6 +41,7 @@ const NavItems = () => {
             handleOpen={handleOpen}
             isOpen={isOpen}
             key={category.value}
+            setActiveIndex={setActiveIndex}
           />
         );
       })}

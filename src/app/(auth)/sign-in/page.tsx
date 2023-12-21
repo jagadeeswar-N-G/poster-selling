@@ -40,9 +40,6 @@ const Page = () => {
 
 
 const AuthCredentialsValidator = z.object({
-  userName: z.string().min(4, {
-    message: 'The user name must be atleast 4 characters'
-  }),
   email: z.string().email(),
   password: z.string().min(8, {
     message: 'Password must be at least 8 characters long.',
@@ -98,22 +95,6 @@ type TAuthCredentialsValidator = z.infer<
           <div className='grid gap-6'>
             <form onSubmit={handleSubmit(onSubmit)}>
               <div className='grid gap-2'>
-                <div className='grid gap-1 py-2'>
-                  <Label htmlFor='email'>user name</Label>
-                  <Input
-                    {...register('userName')}
-                    className={cn({
-                      'focus-visible:ring-red-500':
-                        errors.userName,
-                    })}
-                    placeholder='User name'
-                  />
-                  {errors?.email && (
-                    <p className='text-sm text-red-500'>
-                      {errors.userName?.message}
-                    </p>
-                  )}
-                </div>
                 <div className='grid gap-1 py-2'>
                   <Label htmlFor='email'>Email</Label>
                   <Input

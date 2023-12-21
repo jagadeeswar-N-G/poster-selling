@@ -5,6 +5,10 @@ import { cn } from "@/lib/utils";
 import Navbar from "@/components/Navbar";
 import Providers from "@/components/Providers";
 import GlobalState from "@/context";
+import { ThemeProvider } from "@/components/ThemeProvider";
+import Footer from "@/components/Footer";
+import { Toaster } from "@/components/ui/toaster";
+import { AuthProvider } from "@/components/authProvider";
 const inter = Inter({ subsets: ["latin"] });
 
 export const metadata: Metadata = {
@@ -27,12 +31,14 @@ export default function RootLayout({
         )}
       >
         <main className="relative flex flex-col min-h-screen">
-        <GlobalState>
-          <Providers>
-            <Navbar />
-            <div className="flex-grow flex-1">{children}</div>
-          </Providers>
-        </GlobalState>
+          <AuthProvider>
+            <Providers>
+              <Navbar />
+              <div className="flex-grow flex-1">{children}</div>
+              <Toaster />
+              <Footer />
+            </Providers>
+          </AuthProvider>
         </main>
       </body>
     </html>

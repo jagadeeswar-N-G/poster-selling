@@ -1,13 +1,17 @@
-import React from "react";
+"use client"
+import React, { useContext } from "react";
 import Wrapper from "./Wrapper";
 import Link from "next/link";
 import { Icons } from "./ui/Icons";
 import NavItems from "./NavItems";
-import { buttonVariants } from "./ui/button";
+import { Button, buttonVariants } from "./ui/button";
 import Cart from "./Cart";
+import {ModeToggle} from './ThemeModel'
+import { AuthContext } from "./authProvider";
+import { DropdownMenuDemo } from "./logout";
 
 const Navbar = () => {
-  const user = null;
+  const { isLoggedIn }: any = useContext(AuthContext);
   return (
     <div className="bg-white sticky z-50 top-0 inset-x-0 h-16">
       <header className="relative bg-white">
@@ -26,7 +30,9 @@ const Navbar = () => {
             </div>
             <div className="ml-auto flex items-center">
               <div className="hidden md:flex md:flex-1 md:items-center md:justify-end md:space-x-6">
-                {user ? null : (
+                {isLoggedIn ? (
+                 <DropdownMenuDemo/>
+                ) : (
                   <div>
                     <Link
                       href="/sign-in"
@@ -55,3 +61,5 @@ const Navbar = () => {
 };
 
 export default Navbar;
+
+
