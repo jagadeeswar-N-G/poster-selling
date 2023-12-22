@@ -1,3 +1,4 @@
+import ProductListing from "@/components/ProductListing";
 import Wrapper from "@/components/Wrapper";
 import { Button, buttonVariants } from "@/components/ui/button";
 import { ArrowDownToLine, ShieldCheck, Sprout } from "lucide-react";
@@ -24,26 +25,7 @@ const perks = [
 export default function Home() {
   return (
     <div>
-      <Wrapper>
-        <div className="py-20 mx-auto text-center flex flex-col item-center max-w-3xl">
-          <h1 className="text-4xl font-bold tracking-tight">
-            Your marketplace for high-quality{" "}
-            <span className="text-yellow-500">Posters</span>
-          </h1>
-          <p className="mt-6 text-lg max-w-prose text-muted-foreground">
-            Welcome to our vibrant online marketplace, the ultimate destination
-            for art enthusiasts and decor aficionados alike! Step into a world
-            where creativity knows no bounds, and expression takes center stage.
-            Welcome to Space posters, your go-to poster selling website.
-          </p>
-          <div className="flex flex-row gap-4 mt-6 items-center justify-center">
-            <Link href="/products" className={buttonVariants()}>
-              Brows Trending
-            </Link>
-            <Button variant="ghost">Our Quality Promise &rarr;</Button>
-          </div>
-        </div>
-      </Wrapper>
+      <ProductListing/>
       <section className="border-t border-gray-200 bg-gray-50">
         <Wrapper className="py-20">
           <div className="grid grid-cols-1 gap-y-12 sm:grid-cols-2 sm:gap-x-6 lg:grid-cols-3 lg:gap-x-8 lg:gap-y-0">

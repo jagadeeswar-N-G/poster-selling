@@ -1,5 +1,5 @@
 "use client"
-import React, { createContext, useContext, useState, ReactNode, FunctionComponent } from 'react';
+import React, { createContext, useContext, useState, ReactNode, FunctionComponent, useEffect } from 'react';
 import { string } from 'zod';
 
 // cartContext.tsx
@@ -72,7 +72,23 @@ export const AuthProvider: FunctionComponent<AuthProviderProps> = ({ children })
     localStorage.removeItem('isLoggedIn');
   };
 
-  const [items, setItems] = useState<Item[]>([]);
+  const [items, setItems] = useState<Item[]>(() => {
+    // Initialize with data from local storage
+    const storedItems = localStorage.getItem('cartItems');
+    return storedItems ? JSON.parse(storedItems) : [];
+  });;
+
+  useEffect(() => {
+    const storedItems = localStorage.getItem('cartItems');
+    if (storedItems) {
+      setItems(JSON.parse(storedItems));
+    }
+  }, []);
+
+  // Save cart items to local storage whenever items change
+  useEffect(() => {
+    localStorage.setItem('cartItems', JSON.stringify(items));
+  }, [items]);
 
   const addItem = (item: Item) => {
     setItems((prevItems) => [...prevItems, item]);

@@ -17,6 +17,7 @@ import Link from "next/link";
 import { buttonVariants } from "./ui/button";
 import { useAuth } from "./authProvider";
 import RemoveItem from "./RemoveItem";
+import CheckoutButton from "./CheckoutButton";
 
 const Cart = () => {
   const { items, getTotalPrice } = useAuth();
@@ -99,17 +100,12 @@ const Cart = () => {
                       </div>
                       <div className="flex">
                         <span className="flex-1">Total fee</span>
-                        <span>{getTotalPrice()}</span>
+                        <span>{getTotalPrice() + 1}</span>
                       </div>
                     </div>
                   </div>
                   <SheetFooter className="mt-3">
-                    <Link
-                      href="/cart"
-                      className={buttonVariants({ className: "w-full mr-4" })}
-                    >
-                      continue to checkoutk
-                    </Link>
+                   <CheckoutButton/>
                   </SheetFooter>
                 </div>
               </div>
