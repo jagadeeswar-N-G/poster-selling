@@ -54,9 +54,15 @@ export const AuthProvider: FunctionComponent<AuthProviderProps> = ({ children })
   // State to track the login status
   const [isLoggedIn, setIsLoggedIn] = useState(() => {
     // Check if the user was logged in before the refresh
-    const storedLoggedInState = localStorage.getItem('isLoggedIn');
+    const storedLoggedInState = typeof localStorage !== 'undefined' ? localStorage.getItem('isLoggedIn') : null;
     return storedLoggedInState ? JSON.parse(storedLoggedInState) : false;
   });
+
+  // useEffect to update the local storage when isLoggedIn changes
+  useEffect(() => {
+    localStorage.setItem('isLoggedIn', JSON.stringify(isLoggedIn));
+  }, [isLoggedIn]);
+
   // Function to perform login
   const login = () => {
     // Perform your login logic here
@@ -74,9 +80,10 @@ export const AuthProvider: FunctionComponent<AuthProviderProps> = ({ children })
 
   const [items, setItems] = useState<Item[]>(() => {
     // Initialize with data from local storage
-    const storedItems = localStorage.getItem('cartItems');
+    const storedItems = typeof localStorage !== 'undefined' ? localStorage.getItem('cartItems'): null;
     return storedItems ? JSON.parse(storedItems) : [];
   });;
+
 
   useEffect(() => {
     const storedItems = localStorage.getItem('cartItems');
