@@ -10,18 +10,19 @@ import { AuthContext } from "./authProvider";
 import { DropdownMenuDemo } from "./logout";
 import MobileNav from "./MobileNav";
 import Image from "next/image";
-
+import { SketchLogoIcon } from '@radix-ui/react-icons'
 const Navbar = () => {
   const { isLoggedIn }: any = useContext(AuthContext);
   return (
-    <div className="bg-white sticky z-50 top-0 inset-x-0 h-16">
-      <header className="relative bg-white">
+    <div className="bg-white sticky z-50 top-0 inset-x-0 h-16 dark:bg-black">
+      <header className="relative bg-white dark:bg-black">
         <Wrapper>
           <div className="border-b border-gray-200 flex">
           <MobileNav/>
-            <div>
+            <div className="p-3">
               <Link href="/">
-                <Image src="/logo.png" alt="logo" width={100}  height={100} className="md:w-20 md:h-20 w-[60px] h-[60px]"/>
+                {/* <Image src="/logo.png" alt="logo" width={100}  height={100} className="md:w-20 md:h-20 w-[60px] h-[60px]"/> */}
+                <SketchLogoIcon className="w-10 h-10"/>
               </Link>
             </div>
             <div className="hidden z-50 md:ml-8 md:block md:self-stretch">
@@ -48,8 +49,11 @@ const Navbar = () => {
                   </div>
                 )}
               </div>
-              <div className="md:pl-4">
+              <div className="md:px-4">
                   <Cart/>
+              </div>
+              <div className="mx-4">
+                <ModeToggle/>
               </div>
             </div>
           </div>

@@ -17,6 +17,7 @@ import { z } from "zod";
 import { useToast } from "@/components/ui/use-toast";
 import { useAuth } from "@/components/authProvider";
 import Image from "next/image";
+import { SketchLogoIcon } from "@radix-ui/react-icons";
 
 const Page = () => {
   const { login } = useAuth();
@@ -56,7 +57,7 @@ const Page = () => {
       <div className="container relative flex pt-20 flex-col items-center justify-center lg:px-0">
         <div className="mx-auto flex w-full flex-col justify-center space-y-6 sm:w-[350px]">
           <div className="flex flex-col items-center space-y-2 text-center">
-            <Image src="/logo.png" alt="logo" width={150} height={150}/>
+            <SketchLogoIcon className="w-40 h-40"/>
             <h1 className="text-2xl font-semibold tracking-tight">
               Sign in to your {isSeller ? "seller" : ""} account
             </h1>

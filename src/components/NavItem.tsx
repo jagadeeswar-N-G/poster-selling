@@ -45,11 +45,11 @@ const Navitem = ({ category, handleOpen, isAnyOpen, isOpen, setActiveIndex }: Na
           )}
         >
           <div
-            className="absolute inset-0 top-1/2 bg-white shadow"
+            className="absolute inset-0 top-1/2 bg-white shadow dark:bg-black"
             aria-hidden="true"
           />
 
-          <div className="relative bg-white">
+          <div className="relative bg-white dark:bg-black">
             <div className="mx-auto px-8">
               <div className="grid grid-cols-4 gap-x-8 gap-y-10 py-16">
                 <div className="col-span-4 col-start-1 grid grid-cols-3 gap-x-8">
@@ -71,7 +71,7 @@ const Navitem = ({ category, handleOpen, isAnyOpen, isOpen, setActiveIndex }: Na
                             />
                           </div>
 
-                          <span className="mt-6 block font-medium text-gray-900">
+                          <span className="mt-6 block font-medium text-gray-900 dark:text-white">
                             {item.name}
                           </span>
                           <p className="mt-1" aria-hidden="true">

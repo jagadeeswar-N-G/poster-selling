@@ -34,10 +34,17 @@ export default function RootLayout({
         <main className="relative flex flex-col min-h-screen">
           <AuthProvider>
             <Providers>
+            <ThemeProvider
+            attribute="class"
+            defaultTheme="system"
+            enableSystem
+            disableTransitionOnChange
+          >
               <Navbar />
               <div className="flex-grow flex-1">{children}</div>
               <Toaster />
               <Footer />
+              </ThemeProvider>
             </Providers>
           </AuthProvider>
         </main>

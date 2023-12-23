@@ -52,7 +52,7 @@ const MobileNav = () => {
 
       <div className='fixed overflow-y-scroll overscroll-y-none inset-0 z-40 flex'>
         <div className='w-4/5'>
-          <div className='relative flex w-full max-w-sm flex-col overflow-y-auto bg-white pb-12 shadow-xl'>
+          <div className='relative flex w-full max-w-sm flex-col overflow-y-auto bg-white pb-12 shadow-xl dark:bg-black'>
             <div className='flex px-4 pb-2 pt-5'>
               <button
                 type='button'
@@ -70,7 +70,7 @@ const MobileNav = () => {
                     className='space-y-10 px-4 pb-8 pt-10'>
                     <div className='border-b border-gray-200'>
                       <div className='-mb-px flex'>
-                        <p className='border-transparent text-gray-900 flex-1 whitespace-nowrap border-b-2 py-4 text-base font-medium'>
+                        <p className='border-transparent text-gray-900 flex-1 whitespace-nowrap border-b-2 py-4 text-base font-medium dark:text-gray-600'>
                           {category.label}
                         </p>
                       </div>
@@ -90,7 +90,7 @@ const MobileNav = () => {
                             />
                           </div>
                           <p
-                            className='mt-6 block font-medium text-gray-900'>
+                            className='mt-6 block font-medium text-gray-900 dark:text-white'>
                             {item.name}
                           </p>
                         </div>
@@ -102,12 +102,12 @@ const MobileNav = () => {
               </ul>
             </div>
 
-            {isLoggedIn ? ('') :( <div className='space-y-6 border-t border-gray-200 px-4 py-6'>
+            {isLoggedIn ? ('') :( <div className='space-y-6 border-t border-gray-200 px-4 py-6 dark:border-gray-700'>
               <div className='flow-root'>
                 <Link
                   onClick={() => closeOnCurrent('/sign-in')}
                   href='/sign-in'
-                  className='-m-2 block p-2 font-medium text-gray-900'>
+                  className='-m-2 block p-2 font-medium text-gray-900 dark:text-white'>
                   Sign in
                 </Link>
               </div>
@@ -115,7 +115,7 @@ const MobileNav = () => {
                 <Link
                   onClick={() => closeOnCurrent('/sign-up')}
                   href='/sign-up'
-                  className='-m-2 block p-2 font-medium text-gray-900'>
+                  className='-m-2 block p-2 font-medium text-gray-900  dark:text-white'>
                   create Account
                 </Link>
               </div>

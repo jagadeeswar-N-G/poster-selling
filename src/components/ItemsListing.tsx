@@ -4,7 +4,7 @@ import React from "react";
 
 const ItemsListing = ({ category }: any) => {
   return (
-    <div className="bg-white">
+    <div className="bg-white dark:bg-black">
       <div className="mx-auto max-w-2xl px-4 py-16 sm:px-6 sm:py-24 lg:max-w-7xl lg:px-8">
         <h2 className="text-3xl font-bold text-transparent bg-clip-text bg-gradient-to-r to-orange-900 from-orange-300">
           {category.label.toUpperCase()}
@@ -24,14 +24,14 @@ const ItemsListing = ({ category }: any) => {
               </div>
               <div className="mt-4 flex justify-between">
                 <div>
-                  <h3 className="text-sm text-gray-700">
+                  <h3 className="text-md text-gray-700 dark:text-white">
                     <p>
                       <span aria-hidden="true" className="absolute inset-0" />
                       {product.name}
                     </p>
                   </h3>
                 </div>
-                <p className="text-sm font-medium text-gray-900">
+                <p className="text-sm font-medium text-gray-900  dark:text-white">
                   {product.price}
                 </p>
               </div>
