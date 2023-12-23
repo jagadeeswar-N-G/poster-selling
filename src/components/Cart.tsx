@@ -29,7 +29,7 @@ const Cart = () => {
           aria-hidden="true"
           className="h-4 w-4 md:h-6 md:w-6 flex-shrink-0 text-gray-400 group-hover:text-gray-500"
         />
-        <span className="ml-2 text-sm font-medium text-gray-500 group-hover:text-gray-800">
+        <span className="ml-2 text-[10px] md:text-sm font-medium text-gray-500 group-hover:text-gray-800">
           {cartItems}
         </span>
       </SheetTrigger>

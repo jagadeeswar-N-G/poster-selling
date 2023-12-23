@@ -8,14 +8,15 @@ import { ArrowRight, Loader2 } from "lucide-react";
 import Link from "next/link";
 import { useForm } from "react-hook-form";
 
+
 import { trpc } from "@/trpc/client";
 
 import { ZodError } from "zod";
 import { useRouter, useSearchParams } from "next/navigation";
-import { Icons } from "@/components/ui/Icons";
 import { z } from "zod";
 import { useToast } from "@/components/ui/use-toast";
 import { useAuth } from "@/components/authProvider";
+import Image from "next/image";
 
 const Page = () => {
   const { login } = useAuth();
@@ -55,7 +56,7 @@ const Page = () => {
       <div className="container relative flex pt-20 flex-col items-center justify-center lg:px-0">
         <div className="mx-auto flex w-full flex-col justify-center space-y-6 sm:w-[350px]">
           <div className="flex flex-col items-center space-y-2 text-center">
-            <Icons.logo className="h-20 w-20" />
+            <Image src="/logo.png" alt="logo" width={150} height={150}/>
             <h1 className="text-2xl font-semibold tracking-tight">
               Sign in to your {isSeller ? "seller" : ""} account
             </h1>

@@ -1,6 +1,5 @@
 import Link from "next/link";
-import { Icons } from "./ui/Icons";
-
+import Image from "next/image";
 import React from "react";
 
 const Footer = () => {
@@ -11,7 +10,7 @@ const Footer = () => {
         <div className="sm:flex sm:items-center sm:justify-between">
           <div className="flex items-center">
             <Link href="/">
-              <Icons.logo className="h-40 w-40" />
+            <Image src="/logo.png" alt="logo" width={160} height={160}/>
             </Link>
           </div>
           <ul className="flex flex-wrap items-center mb-6 text-sm font-medium text-gray-500 sm:mb-0 dark:text-gray-400">

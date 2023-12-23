@@ -2,7 +2,6 @@
 import React, { useContext } from "react";
 import Wrapper from "./Wrapper";
 import Link from "next/link";
-import { Icons } from "./ui/Icons";
 import NavItems from "./NavItems";
 import { Button, buttonVariants } from "./ui/button";
 import Cart from "./Cart";
@@ -10,6 +9,7 @@ import {ModeToggle} from './ThemeModel'
 import { AuthContext } from "./authProvider";
 import { DropdownMenuDemo } from "./logout";
 import MobileNav from "./MobileNav";
+import Image from "next/image";
 
 const Navbar = () => {
   const { isLoggedIn }: any = useContext(AuthContext);
@@ -19,9 +19,9 @@ const Navbar = () => {
         <Wrapper>
           <div className="border-b border-gray-200 flex">
           <MobileNav/>
-            <div className="">
+            <div>
               <Link href="/">
-                <Icons.logo className="h-[50px] w-[50px] md:h-20 md:w-20" />
+                <Image src="/logo.png" alt="logo" width={100}  height={100} className="md:w-20 md:h-20 w-[60px] h-[60px]"/>
               </Link>
             </div>
             <div className="hidden z-50 md:ml-8 md:block md:self-stretch">
