@@ -17,7 +17,7 @@ import Link from "next/link";
 import { buttonVariants } from "./ui/button";
 import { useAuth } from "./authProvider";
 import RemoveItem from "./RemoveItem";
-import CheckoutButton from "./CheckoutButton";
+import CheckoutButton from "../app/(stripe)/CheckoutButton";
 
 const Cart = () => {
   const { items, getTotalPrice } = useAuth();
