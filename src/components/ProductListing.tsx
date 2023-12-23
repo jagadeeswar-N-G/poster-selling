@@ -6,7 +6,7 @@ import ItemsListing from "./ItemsListing";
 const ProductListing = () => {
   return (
     <div>
-        {PRODUCT_CATOGORIES.map((category: any)=>(
+        {PRODUCT_CATOGORIES.map((category: any, key: any)=>(
           <ItemsListing category={category}/>
         ))}
     </div>

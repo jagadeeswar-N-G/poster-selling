@@ -53,7 +53,7 @@ const Navitem = ({ category, handleOpen, isAnyOpen, isOpen, setActiveIndex }: Na
             <div className="mx-auto px-8">
               <div className="grid grid-cols-4 gap-x-8 gap-y-10 py-16">
                 <div className="col-span-4 col-start-1 grid grid-cols-3 gap-x-8">
-                  {category.featured.map((item) => (
+                  {category.featured.map((item, key) => (
                     <Link href={`/product/${item.name}`}>
                      <button
                      onClick={()=>setActiveIndex()}>
