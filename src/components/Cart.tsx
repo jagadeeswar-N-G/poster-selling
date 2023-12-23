@@ -24,10 +24,10 @@ const Cart = () => {
   const cartItems = items.length;
   return (
     <Sheet>
-      <SheetTrigger className=" flex group -m-2 items-center p-2">
+      <SheetTrigger className=" flex group -m-2 items-center">
         <ShoppingCartIcon
           aria-hidden="true"
-          className="h-6 w-6 flex-shrink-0 text-gray-400 group-hover:text-gray-500"
+          className="h-4 w-4 md:h-6 md:w-6 flex-shrink-0 text-gray-400 group-hover:text-gray-500"
         />
         <span className="ml-2 text-sm font-medium text-gray-500 group-hover:text-gray-800">
           {cartItems}

@@ -48,7 +48,7 @@ const page = ({ params }: PageProps) => {
               <div className="flex flex-col gap-y-6">
                 <div className="flex flex-col gap-y-2">
                   <h1 className="text-2xl font-bold leading-7 text-gray-900 sm:truncate sm:text-3xl sm:tracking-tight">
-                    {result?.product.name}
+                    {result?.product.name.toUpperCase()}
                   </h1>
                   <p className="mb-4 text-lg font-normal text-gray-500 dark:text-gray-400">
                     Price: ${result?.product.price}

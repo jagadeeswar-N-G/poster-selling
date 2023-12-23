@@ -1,5 +1,5 @@
 import type { Metadata } from "next";
-import { Inter } from "next/font/google";
+import { DM_Sans } from "next/font/google";
 import "./globals.css";
 import { cn } from "@/lib/utils";
 import Navbar from "@/components/Navbar";
@@ -9,7 +9,8 @@ import { ThemeProvider } from "@/components/ThemeProvider";
 import Footer from "@/components/Footer";
 import { Toaster } from "@/components/ui/toaster";
 import { AuthProvider } from "@/components/authProvider";
-const inter = Inter({ subsets: ["latin"] });
+
+const DM = DM_Sans({ subsets: ["latin"] });
 
 export const metadata: Metadata = {
   title: "Poster selling",
@@ -27,7 +28,7 @@ export default function RootLayout({
         className={cn(
           //this cn function allows to join the classnames  together
           "relative h-full font-sans antialiased",
-          inter.className
+          DM.className
         )}
       >
         <main className="relative flex flex-col min-h-screen">
