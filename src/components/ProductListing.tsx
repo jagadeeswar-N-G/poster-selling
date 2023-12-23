@@ -7,7 +7,9 @@ const ProductListing = () => {
   return (
     <div>
         {PRODUCT_CATOGORIES.map((category: any, key: any)=>(
+          <div key={key}>
           <ItemsListing category={category}/>
+          </div>
         ))}
     </div>
   )
