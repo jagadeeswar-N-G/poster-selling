@@ -11,8 +11,8 @@ const ItemsListing = ({ category }: any) => {
         </h2>
         <div className="mt-6 grid grid-cols-1 gap-x-6 gap-y-10 sm:grid-cols-2 lg:grid-cols-4 xl:gap-x-8">
           {category.featured.map((product: any, key: any) => (
-            <Link href={`/product/${product.name}`}>
-            <div key={key} className="group relative">
+            <Link key={key} href={`/product/${product.name}`}>
+            <div className="group relative">
               <div className="aspect-h-1 aspect-w-1 w-full overflow-hidden rounded-md bg-gray-200 lg:aspect-none group-hover:opacity-75 lg:h-80">
                 <Image
                   src={product.imageSrc}
