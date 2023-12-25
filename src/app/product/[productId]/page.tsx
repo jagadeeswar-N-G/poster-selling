@@ -51,7 +51,7 @@ const page = ({ params }: PageProps) => {
                     {result?.product.name.toUpperCase()}
                   </h1>
                   <p className="mb-4 text-lg font-normal text-gray-500 dark:text-gray-400">
-                    Price: ${result?.product.price}
+                    Price: {result?.product.price}
                   </p>
                 </div>
                 <div className="flex flex-col gap-y-4">

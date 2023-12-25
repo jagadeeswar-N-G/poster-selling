@@ -46,11 +46,28 @@ const Page = () => {
     resolver: zodResolver(AuthCredentialsValidator),
   });
 
-  const onSubmit = ({ email, password }: TAuthCredentialsValidator) => {
+  const onSubmit = async({ userName,email, password }: TAuthCredentialsValidator) => {
     login();
     toast({
       description: "You have signed in succesfully",
     });
+    try {
+      const response = await fetch('/api/send', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify({
+          userName:userName,
+          emails: email,
+        }),
+      });
+
+      const result = await response.json();
+      console.log(result);
+    } catch (error) {
+      console.error(error);
+    }
     router.push("/");
   };
 
