@@ -35,44 +35,7 @@ export const NikeReceiptEmail = ({ firstName }: any) => (
             please visit your Orders page on Nike.com or in the poster selling.
           </Text>
         </Section>
-        <Hr style={global.hr} />
-        <Section style={global.defaultPadding}>
-          <Text style={adressTitle}>Shipping to: Zeno Rocha</Text>
-          <Text style={{ ...global.text, fontSize: 14 }}>
-            2125 Chestnut St, San Francisco, CA 94123
-          </Text>
-        </Section>
-        <Hr style={global.hr} />
-        <Section
-          style={{ ...paddingX, paddingTop: "40px", paddingBottom: "40px" }}
-        >
-          <Row>
-            <Column style={{ verticalAlign: "top", paddingLeft: "12px" }}>
-              <Text style={{ ...paragraph, fontWeight: "500" }}>
-                Brazil 2022/23 Stadium Away Womens Nike Dri-FIT Soccer Jersey
-              </Text>
-              <Text style={global.text}>Size L (12–14)</Text>
-            </Column>
-          </Row>
-        </Section>
-        <Hr style={global.hr} />
-        <Section style={global.defaultPadding}>
-          <Row style={{ display: "inline-flex", marginBottom: 40 }}>
-            <Column style={{ width: "170px" }}>
-              <Text style={global.paragraphWithBold}>Order Number</Text>
-              <Text style={track.number}>C0106373851</Text>
-            </Column>
-            <Column>
-              <Text style={global.paragraphWithBold}>Order Date</Text>
-              <Text style={track.number}>Sep 22, 2022</Text>
-            </Column>
-          </Row>
-          <Row>
-            <Column align="center">
-              <Link style={global.button}>Order Status</Link>
-            </Column>
-          </Row>
-        </Section>
+
         <Hr style={global.hr} />
         <Section style={menu.container}>
           <Text style={menu.title}>Get Help</Text>
